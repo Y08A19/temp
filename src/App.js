@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Login from "./login/login";
+import "./login/logscr/log.css";
+import Home from "./home"
+import Rgform from "./Rgform";
+
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
+  function getuserpass(user,pass)
+  {
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login data={getuserpass} />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Form" element={<Rgform />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
